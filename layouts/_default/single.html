@@ -26,7 +26,7 @@
 
       {{ if .Param "readTime" }}
       &nbsp; · &nbsp;
-      {{ .ReadingTime }} min read
+      {{ .ReadingTime }} minutos
       {{end }}
     </p>
 
@@ -54,7 +54,7 @@
 
   {{ if .Param "toc" }}
   <aside class="toc">
-    <p><strong>Table of contents</strong></p>
+    <p><strong>Tabla de contenidos</strong></p>
     {{ .TableOfContents }}
   </aside>
   {{ end }}
@@ -63,7 +63,7 @@
 
   <div class="single-content">
     {{ .Content }}
-    {{ if .Site.Params.giscus.enable }}
+    {{ if and .Site.Params.comments.enable (not .Params.disableComments) }}
     {{ partial "comments.html" . }}
     {{ end }}
   </div>
