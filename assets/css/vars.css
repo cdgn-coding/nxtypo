@@ -1,14 +1,22 @@
 :root {
+    --serif-font: 'FiraCodeNerd', monospace;
+    --sans-serif-font: 'Lato', 'Helvetica', sans-serif;
     --main-width: 780px;
     --main-padding: 1.4em;
     --main-padding-bottom: 3rem;
+
+    --color-primary: #3556F9;
+    --color-secondary: #20C9E5;
+    --color-tertiary: #1CD37F;
+    --color-muted: #6F849B;
+
 
     --caption-padding: calc(.25 * var(--main-padding));
 
     /* header settings */
     --header-top-gap: 2rem;
     --header-bottom-gap: 2rem;
-    --header-menu-side-gap: .5rem;
+    --header-menu-side-gap: 1rem;
     --header-menu-top-gap: 1rem;
 
     /* Typography */

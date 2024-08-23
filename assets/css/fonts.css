@@ -1,41 +1,127 @@
 @font-face {
-    font-family: 'Literata';
-    src: url('/fonts/Literata/Literata-Light.woff2') format('woff2');
-    font-weight: light;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Literata';
-    src: url('/fonts/Literata/Literata-LightItalic.woff2') format('woff2');
-    font-weight: light;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Literata';
-    src: url('/fonts/Literata/Literata-SemiBold.woff2') format('woff2');
+    font-family: 'FiraCodeNerd';
+    src: url('/fonts/FiraCodeNerdFont-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Literata';
-    src: url('/fonts/Literata/Literata-SemiBoldItalic.woff2') format('woff2');
-    font-weight: bold;
-    font-style: italic;
+    font-family: 'FiraCodeNerd';
+    src: url('/fonts/FiraCodeNerdFont-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'Monaspace';
-    src: url('/fonts/Monaspace/MonaspaceArgon-Regular.woff') format('woff');
+    font-family: 'FiraCodeNerd';
+    src: url('/fonts/FiraCodeNerdFont-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerd';
+    src: url('/fonts/FiraCodeNerdFont-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Monaspace';
-    src: url('/fonts/Monaspace/MonaspaceArgon-SemiBold.woff') format('woff');
+    font-family: 'FiraCodeNerd';
+    src: url('/fonts/FiraCodeNerdFont-Retina.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerd';
+    src: url('/fonts/FiraCodeNerdFont-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Mono Variants */
+@font-face {
+    font-family: 'FiraCodeNerdMono';
+    src: url('/fonts/FiraCodeNerdFontMono-Bold.ttf') format('truetype');
     font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdMono';
+    src: url('/fonts/FiraCodeNerdFontMono-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdMono';
+    src: url('/fonts/FiraCodeNerdFontMono-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdMono';
+    src: url('/fonts/FiraCodeNerdFontMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdMono';
+    src: url('/fonts/FiraCodeNerdFontMono-Retina.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdMono';
+    src: url('/fonts/FiraCodeNerdFontMono-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Propo Variants */
+@font-face {
+    font-family: 'FiraCodeNerdPropo';
+    src: url('/fonts/FiraCodeNerdFontPropo-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdPropo';
+    src: url('/fonts/FiraCodeNerdFontPropo-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdPropo';
+    src: url('/fonts/FiraCodeNerdFontPropo-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdPropo';
+    src: url('/fonts/FiraCodeNerdFontPropo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdPropo';
+    src: url('/fonts/FiraCodeNerdFontPropo-Retina.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCodeNerdPropo';
+    src: url('/fonts/FiraCodeNerdFontPropo-SemiBold.ttf') format('truetype');
+    font-weight: 600;
     font-style: normal;
 }

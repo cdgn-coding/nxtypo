@@ -4,17 +4,20 @@
 
     {{ if or (not (.Param "hideHeader")) .IsHome }}
 
-    <h1 class="header-title">{{ site.Title }}</h1>
-
     <div class="flex">
+
+        <a href="{{  .Site.BaseURL }}" class="logo-link">
+            <image src="/images/logo.png" alt="{{ .Site.Params.title }}" class="logo" />
+        </a>
+
         {{ $currentPage := . }}
 
         {{ with site.Params.menu }}
         {{ range . }}
       
-        <p class="small {{ if eq .name (lower $currentPage.Name) }} bold {{end}}">
+        <p class="{{ if eq .name (lower $currentPage.Name) }} current {{end}}">
             <a href="{{ .url }}" {{ if and (isset . "newTab") .newTab }}target="_blank" rel="noopener noreferrer"{{ end }}>
-                /{{.name }}
+                {{.name }}
             </a>
         </p>
         {{ end }}

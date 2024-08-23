@@ -1,7 +1,5 @@
 {{ define "main" }}
 
-{{ .Content }}
-
 {{/* Intro summary section */}}
 
 {{ if or .Site.Params.homeIntroTitle .Site.Params.homeIntroContent }}
@@ -15,6 +13,8 @@
     {{ end }}
 </div>
 {{ end }}
+
+{{ .Content }}
 
 {{/* Social Icons */}}
 
