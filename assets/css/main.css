@@ -51,6 +51,8 @@ p {
 ul {
   margin-top: var(--ul-margin-top);
   margin-bottom: var(--ul-margin-bottom);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
 }
 
 li {
@@ -61,16 +63,29 @@ a {
   text-decoration: underline;
 }
 
+ol, ul {
+  font-size: var(--p-font-size);
+  margin: 0;
+  margin-block: 0;
+  padding-inline: 0;
+  line-height: var(--p-line-height);
+}
+
 /* Code blocks */
 
-pre {
-  padding: var(--code-padding);
-  border: 1px solid var(--code-border);
+div.highlight {
+  max-height: 400px;
   overflow: scroll;
-  border-radius: var(--code-border-radius);
+}
+
+pre {
+  /*padding: var(--code-padding);*/
+  /*border: 1px solid var(--code-border);*/
+  overflow: scroll;
+  /*border-radius: var(--code-border-radius);*/
   margin-top: var(--code-margin-top);
   margin-bottom: var(--code-margin-bottom);
-  background-color: var(--code-background) !important;
+  /* background-color: var(--code-background) !important; */
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -93,7 +108,7 @@ code {
   -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig";
   font-variant-ligatures: contextual;
-  font-family: "Monaspace";
+  font-family: "FiraCodeNerd";
   font-size: .9em;
   line-height: 0;
 }
@@ -345,7 +360,6 @@ footer a {
 .single-content p {
   font-family: var(--sans-serif-font);
   line-height: 32px;
-  font-size: 20px;
 }
 
 .single-tags {
@@ -409,7 +423,6 @@ footer a {
 /* Table of contents */
 
 .toc {
-  font-size: var(--p-font-size);
   line-height: calc(.9 * var(--p-line-height));
   margin-top: var(--toc-margin-top);
   margin-bottom: var(--toc-margin-bottom);
@@ -587,8 +600,8 @@ th {
 }
 
 table code {
-  background-color: var(--code-background);
-  border-radius: 3px;
+  /*background-color: var(--code-background);
+  border-radius: 3px;*/
   padding: 2px;
 }
 
@@ -617,4 +630,11 @@ a {
 
 a:hover {
   color: var(--color-secondary);
+}
+
+sup > a {
+  font-weight: 400;
+  text-decoration: none;
+  padding-bottom:0;
+  border-bottom: none;
 }
