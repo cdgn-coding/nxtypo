@@ -2,35 +2,35 @@
 <html lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
   dir="{{ or site.Language.LanguageDirection `ltr` }}">
 
-  <head>
-    {{ partial "head.html" . }}
-  </head>
+<head>
+  {{ partial "head.html" . }}
+</head>
 
-  {{ $theme := "auto"}}
+{{ $theme := "auto"}}
 
-  {{ with .Param "theme" }}
-  {{ $theme = .}}
-  {{ end }}
+{{ with .Param "theme" }}
+{{ $theme = .}}
+{{ end }}
 
-  <body class="{{ $theme }}">
+<body class="{{ $theme }}">
 
-    <div class="content">
-      <header>
-        {{ partial "header.html" . }}
-      </header>
+  <div class="content">
+    <header>
+      {{ partial "header.html" . }}
+    </header>
 
-      <main class="main">
-        {{ block "main" . }}{{ end }}
-      </main>
-    </div>
+    <main class="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+  </div>
 
-    <footer>
-      {{ partial "footer.html" . }}
-    </footer>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
 
-  </body>
+</body>
 
-  <script>
+<script>
 
   function isAuto() {
     return document.body.classList.contains("auto");
@@ -42,25 +42,95 @@
     }
 
     document.body.classList.remove("auto");
-    let cls = "light";
+    let currentTheme = "light";
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      cls = "dark";
+      currentTheme = "dark";
     }
 
-    document.body.classList.add(cls);
+    const storedTheme = window.localStorage && window.localStorage.getItem("theme");
+    const defaultTheme = '{{$.Site.Params.defaultTheme}}';
+    const workingTheme = storedTheme || currentTheme || defaultTheme;
+    const theme = workingTheme === 'dark' ? 'dark' : 'light';
+
+    document.body.classList.add(theme);
+
+    if (document.getElementsByClassName("toggle-checkbox")) {
+      document.getElementsByClassName("toggle-checkbox")[0].checked = theme === "dark";
+    }
   }
 
   function invertBody() {
     document.body.classList.toggle("dark");
     document.body.classList.toggle("light");
+
+    window.localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
   }
 
   if (isAuto()) {
     window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
   }
 
-  // setTheme();
-
+  setTheme();
 </script>
+<script>
+  const mutationObserver = new MutationObserver((mutationsList, observer) => {
+    mutationsList.forEach(mutation => {
+      if (mutation.attributeName === "class") {
+        console.log(mutation, 'asdads')
+        // update utterances theme
+        if (document.querySelector('.utterances-frame')) {
+          const theme = mutation.target.classList.contains("dark") ? 'github-dark' : 'github-light'
+          const message = {
+            type: 'set-theme',
+            theme: theme
+          };
+          const iframe = document.querySelector('.utterances-frame');
+          iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+        }
+
+        if (document.querySelector('.theme-toggle .toggle-checkbox')) {
+          const theme = mutation.target.classList.contains("dark") ? 'dark' : 'light'
+          const isDark = theme === 'dark'
+          document.querySelector('.theme-toggle .toggle-checkbox').checked = isDark;
+        }
+      }
+    })
+  });
+
+  mutationObserver.observe(document.body, { attributes: true });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.theme-toggle .toggle-checkbox').addEventListener('click', () => {
+      invertBody();
+    });
+  });
+</script>
+
+{{ if .Site.Params.utteranc.enable }}
+<script>
+  function loadUtterances() {
+    if (!document.querySelector('div.comments')) {
+      return;
+    }
+    // load utteranc comment
+    const storedTheme = window.localStorage && window.localStorage.getItem("theme");
+    const defaultTheme = '{{$.Site.Params.defaultTheme}}';
+    const currentTheme = document.body.classList.contains("dark") ? 'dark' :
+      document.body.classList.contains("light") ? 'light' : null;
+    const workingTheme = storedTheme || currentTheme || defaultTheme;
+    const theme = workingTheme === 'dark' ? 'github-dark' : 'github-light';
+
+    const s = document.createElement('script');
+    s.src = 'https://utteranc.es/client.js';
+    s.setAttribute('repo', '{{ .Site.Params.utteranc.repo }}');
+    s.setAttribute('issue-term', '{{ .Site.Params.utteranc.issueTerm }}');
+    s.setAttribute('theme', theme);
+    s.setAttribute('crossorigin', 'anonymous');
+    s.setAttribute('async', '');
+    document.querySelector('div.comments').innerHTML = '';
+    document.querySelector('div.comments').appendChild(s);    
+  }
+</script>
+{{ end }}
 
 </html>

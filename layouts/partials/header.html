@@ -4,40 +4,32 @@
 
     {{ if or (not (.Param "hideHeader")) .IsHome }}
 
-    <div class="flex">
 
         <a href="{{  .Site.BaseURL }}" class="logo-link">
-            <image src="/images/logo.png" alt="{{ .Site.Params.title }}" class="logo" />
+            <image src="/images/iso-logo.png" alt="{{ .Site.Params.title }}" class="logo" />
         </a>
 
-        {{ $currentPage := . }}
+        <nav class="menu">
+            {{ $currentPage := . }}
 
-        {{ with site.Params.menu }}
-        {{ range . }}
-      
-        <p class="{{ if eq .name (lower $currentPage.Name) }} current {{end}}">
-            <a href="{{ .url }}" {{ if and (isset . "newTab") .newTab }}target="_blank" rel="noopener noreferrer"{{ end }}>
-                {{.name }}
-            </a>
-        </p>
-        {{ end }}
-        {{ end }}
+            {{ with site.Params.menu }}
+            {{ range . }}
+          
+            <p class="{{ if eq .name (lower $currentPage.Name) }} current {{end}}">
+                <a href="{{ .url }}" {{ if and (isset . "newTab") .newTab }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                    {{.name }}
+                </a>
+            </p>
+            {{ end }}
+            {{ end }}
+        </nav>
 
-        {{/* Social Icons */}}
-    </div>
+        <label class="toggle theme-toggle">
+            <input class="toggle-checkbox" type="checkbox">
+            <div class="toggle-switch"></div>
+        </label>
 
-    {{ end }}
 
-    {{ with site.Params.social }}
-    <div class="social-icons">
-        {{- range . }}
-        <a href="{{ trim .url " " | safeURL }}" target="_blank"
-            rel="noopener noreferrer me"
-            title="{{ (.title | default .name) | title }}">
-            {{ partial "svg.html" . }}
-        </a>
-        {{- end }}
-    </div>
     {{ end }}
 
 </div>

@@ -148,7 +148,13 @@ hr {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+}
+
+.header .menu {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 .header p {
@@ -202,6 +208,17 @@ hr {
   height: 48px;
   width: auto;
 
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header .menu {
+    margin-top: 1rem;
+  }
 }
 
 /* Footer */
@@ -637,4 +654,18 @@ sup > a {
   text-decoration: none;
   padding-bottom:0;
   border-bottom: none;
+}
+
+.home-content {
+  font-size: 1.1em;
+}
+
+body.dark {
+  .header p a {
+    color: #fff;
+  }
+
+  .social-icons a { 
+    color: #fff;
+  }
 }
