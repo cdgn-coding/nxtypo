@@ -76,7 +76,6 @@
   const mutationObserver = new MutationObserver((mutationsList, observer) => {
     mutationsList.forEach(mutation => {
       if (mutation.attributeName === "class") {
-        console.log(mutation, 'asdads')
         // update utterances theme
         if (document.querySelector('.utterances-frame')) {
           const theme = mutation.target.classList.contains("dark") ? 'github-dark' : 'github-light'
@@ -130,6 +129,9 @@
     document.querySelector('div.comments').innerHTML = '';
     document.querySelector('div.comments').appendChild(s);    
   }
+  document.addEventListener('DOMContentLoaded', () => {
+    loadUtterances();
+  });
 </script>
 {{ end }}
 
