@@ -44,19 +44,11 @@ h6 {
 p {
   margin-top: var(--p-margin-top);
   margin-bottom: var(--p-margin-bottom);
-  font-size: var(--p-font-size);
-  line-height: var(--p-line-height);
-}
-
-ul {
-  margin-top: var(--ul-margin-top);
-  margin-bottom: var(--ul-margin-bottom);
-  font-size: var(--p-font-size);
   line-height: var(--p-line-height);
 }
 
 li {
-  margin-left: var(--li-indent);
+  margin-left: var(--li-indent); 
 }
 
 a {
@@ -64,7 +56,6 @@ a {
 }
 
 ol, ul {
-  font-size: var(--p-font-size);
   margin: 0;
   margin-block: 0;
   padding-inline: 0;
