@@ -6,11 +6,18 @@
     {{ end }}
 
     <div class="line-post-content">
-        <p class="line-title">
+        <span class="line-tags">
+            {{ if .Params.tags }}
+                {{ range .Params.tags }}
+                    <span class="tag-box">{{ . }}</span>
+                {{ end }}
+            {{ end }}
+        </span>
+        <span class="line-title">
             <a href="{{ .RelPermalink }}">
                 {{ .Title }}
             </a>
-        </p>
+        </span>
 
         <!--
             {{ if .Site.Params.listSummaries }}

@@ -271,6 +271,17 @@ footer a {
   border: none;
 }
 
+.tag-box {
+  display: inline;
+  padding: 2px 8px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-bottom-color: var(--color-primary);
+  border-radius: 3px;
+  font-size: 0.8em;
+  color: #333;
+}
+
 .tag-title {
   margin: 0;
 }
@@ -278,8 +289,9 @@ footer a {
 .line-summary {
   font-size: small;
   margin-top: .2rem !important;
-  /* font-style: italic; */
+  font-style: italic;
   color: var(--content-secondary);
+
 }
 
 .list-container {
@@ -657,6 +669,18 @@ body.dark {
   }
 
   .social-icons a { 
+    color: #fff;
+  }
+
+  .tag-box, .tag-box {
+    color: #fff;
+  }
+
+  .tag-box {
+    border-bottom-color: #ccc;
+  }
+
+  .breadcrumbs a, .breadcrumbs-separator {
     color: #fff;
   }
 }
