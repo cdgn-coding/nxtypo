@@ -23,6 +23,11 @@
             {{ end }}
             {{ end }}
         </nav>
+        <div class="language-selector">
+            {{ range $.Site.Home.AllTranslations }}
+            <div><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></div>
+            {{ end }}
+        </div>
 
         <label class="toggle theme-toggle">
             <input class="toggle-checkbox" type="checkbox">

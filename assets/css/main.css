@@ -210,6 +210,10 @@ hr {
   .header .menu {
     margin-top: 1rem;
   }
+
+  .language-selector {
+    margin-bottom:16px;
+  }
 }
 
 /* Footer */
@@ -682,5 +686,21 @@ body.dark {
 
   .breadcrumbs a, .breadcrumbs-separator {
     color: #fff;
+  }
+}
+
+.language-selector {
+  display: flex;
+  flex-direction: row;
+  margin-right: 16px;
+
+  div { 
+    margin: 0 8px;
+  }
+  div:first-child {
+    margin-left: 0;
+  }
+  div:last-child {
+    margin-right: 0;
   }
 }
