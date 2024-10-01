@@ -64,10 +64,6 @@ ol, ul {
 
 /* Code blocks */
 
-div.highlight pre {
-  padding: 20px;
-}
-
 pre {
   /*padding: var(--code-padding);*/
   /*border: 1px solid var(--code-border);*/
