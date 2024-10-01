@@ -64,9 +64,8 @@ ol, ul {
 
 /* Code blocks */
 
-div.highlight {
-  max-height: 400px;
-  overflow: scroll;
+div.highlight pre {
+  padding: 20px;
 }
 
 pre {
